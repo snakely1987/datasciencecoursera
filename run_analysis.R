@@ -29,5 +29,5 @@ mergesubject=rbind(subject_train,subject_test)#merge train and test subject labe
 mergedataset=cbind(mergesubject,mergedataset)
 names(mergedataset)[1]="Subject_Labels"
 groupdata=group_by(mergedataset,Activity_Labels,Subject_Labels)
-finalresult=summarise_all(groupd,funs(mean))
+finalresult=summarise_all(groupdata,funs(mean))
 write.table(finalresult,"finalresult.txt")
